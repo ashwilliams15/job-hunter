@@ -1,6 +1,6 @@
 'use strict'
 
-const {db, models: {User} } = require('../server/db')
+const {db, models: {Tasks} } = require('../server/db')
 
 /**
  * seed - this function clears the database, updates tables to
@@ -10,18 +10,15 @@ async function seed() {
   await db.sync({ force: true }) // clears db and matches models to tables
   console.log('db synced!')
 
-  // Creating Users
-  const users = await Promise.all([
-    User.create({ username: 'cody', password: '123' }),
-    User.create({ username: 'murphy', password: '123' }),
+  const tasks = await Promise.all([
+    Tasks.create({ name: "makeApp" }),
   ])
 
-  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${tasks.length} users`)
   console.log(`seeded successfully`)
   return {
-    users: {
-      cody: users[0],
-      murphy: users[1]
+    tasks: {
+      firstTask: tasks[0]
     }
   }
 }
