@@ -1,21 +1,21 @@
 import axios from "axios";
 
 // ACTION TYPES
-const SET_TASKS = "SET_TASKS";
+const SET_COMPANIES = "SET_COMPANIES";
 
 // ACTION CREATORS
-const setTasks = (tasks) => {
+const setTasks = (companies) => {
   return {
-    type: SET_TASKS,
-    tasks
+    type: SET_COMPANIES,
+    companies
   }
 };
 
 // THUNKS
-const fetchTasks = () => {
+const fetchCompanies = () => {
   return async (dispatch) => {
     try {
-      const result = await axios.get("/api/tasks")
+      const result = await axios.get("/api/companies")
       const data = result.data
       dispatch(setTasks(data))
     } catch (err) {
@@ -25,10 +25,10 @@ const fetchTasks = () => {
 }
 
 // REDUCER
-export default function tasksReducer (state = [], action) {
+export default function companiesReducer (state = [], action) {
   switch (action.type) {
-    case SET_TASKS:
-      return action.tasks
+    case SET_COMPANIES:
+      return action.companies
     default:
       return state
   }
