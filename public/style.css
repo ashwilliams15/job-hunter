@@ -12,8 +12,13 @@ a {
 
 .companies {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+/*
+.companyList {
+  display: flex;
+} */
 
 .nav {
   height: 75px;

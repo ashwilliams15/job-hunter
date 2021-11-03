@@ -1,6 +1,6 @@
 'use strict'
 
-const {db, models: {Tasks} } = require('../server/db')
+const {db, models: { Tasks, Companies } } = require('../server/db')
 
 /**
  * seed - this function clears the database, updates tables to
@@ -12,6 +12,10 @@ async function seed() {
 
   const tasks = await Promise.all([
     Tasks.create({ name: "makeApp" }),
+  ])
+
+  const companies = await Promise.all([
+    Companies.create({ name: "Asana" }),
   ])
 
   console.log(`seeded ${tasks.length} users`)

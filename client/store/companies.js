@@ -4,7 +4,7 @@ import axios from "axios";
 const SET_COMPANIES = "SET_COMPANIES";
 
 // ACTION CREATORS
-const setTasks = (companies) => {
+const setCompanies = (companies) => {
   return {
     type: SET_COMPANIES,
     companies
@@ -12,12 +12,12 @@ const setTasks = (companies) => {
 };
 
 // THUNKS
-const fetchCompanies = () => {
+export const fetchCompanies = () => {
   return async (dispatch) => {
     try {
       const result = await axios.get("/api/companies")
       const data = result.data
-      dispatch(setTasks(data))
+      dispatch(setCompanies(data))
     } catch (err) {
       console.log(err)
     }
