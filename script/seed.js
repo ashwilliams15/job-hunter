@@ -11,14 +11,15 @@ async function seed() {
   console.log('db synced!')
 
   const tasks = await Promise.all([
-    Tasks.create({ name: "makeApp" }),
+    Tasks.create({ name: 'makeApp' })
   ])
 
   const companies = await Promise.all([
-    Companies.create({ name: "Asana" }),
+    Companies.create({ name: 'Asana', notes: 'team-based work management application' }),
+    Companies.create({ name: 'Slack', notes: 'platform for team management and communication '})
   ])
 
-  console.log(`seeded ${tasks.length} users`)
+  console.log(`seeded ${tasks.length} tasks`)
   console.log(`seeded successfully`)
   return {
     tasks: {

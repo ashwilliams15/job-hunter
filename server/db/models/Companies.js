@@ -7,7 +7,8 @@ const Companies = db.define('companies', {
     allowNull: false
   },
   notes: {
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    allowNull: false
   }
 })
 

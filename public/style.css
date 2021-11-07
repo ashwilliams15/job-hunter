@@ -15,10 +15,12 @@ a {
   align-items: center;
   flex-direction: column;
 }
-/*
-.companyList {
+
+.addCompany {
   display: flex;
-} */
+  align-items: center;
+  flex-direction: column;
+}
 
 .nav {
   height: 75px;

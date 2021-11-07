@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import Home from './components/Home';
@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Technologies from './components/Technologies';
 import Companies from './components/Companies';
 import Journal from './components/Journal';
+import AddCompany from './components/AddCompany';
 
 class Routes extends Component {
 
@@ -20,7 +21,14 @@ class Routes extends Component {
           <Route path="/job" component={Job} />
           <Route path="/projects" component={Projects} />
           <Route path="/technologies" component={Technologies} />
-          <Route path="/companies" component={Companies} />
+          <Route path="/companies" render={props =>
+            <Fragment>
+              <Companies />
+              <AddCompany />
+            </Fragment>
+            } />
+          {/* <Route path="/companies" component={Companies} />
+          <Route path ="/companies" component={AddCompany} /> */}
           <Route path="/journal" component={Journal} />
         </Switch>
       </div>
