@@ -10,3 +10,12 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.post('/', async (req, res, next) => {
+  try {
+    const technology = await Technologies.create(req.body)
+    res.json(technology)
+  } catch (err) {
+    next(err)
+  }
+})

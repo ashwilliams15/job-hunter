@@ -28,6 +28,12 @@ a {
   flex-direction: column;
 }
 
+.addTechnology {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .nav {
   height: 75px;
   background-color: #b7b7a4;

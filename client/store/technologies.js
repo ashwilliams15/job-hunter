@@ -32,10 +32,10 @@ export const fetchTechnologies = () => {
   }
 }
 
-export const addTechnology = (technology) => {
+export const addTechnology = (name) => {
   return async (dispatch) => {
     try {
-      const result = await axios.post("/api/technologies", technology)
+      const result = await axios.post("/api/technologies", {name})
       const data = result.data
       dispatch(createTechnology(data))
     } catch (err) {

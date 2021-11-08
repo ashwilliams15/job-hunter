@@ -11,7 +11,6 @@ const AddCompany = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     dispatch(addCompany(name, notes))
-    // @todo clear textfields after submit
     setName("")
     setNotes("")
   }

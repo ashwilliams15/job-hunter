@@ -9,6 +9,7 @@ import Technologies from './components/Technologies';
 import Companies from './components/Companies';
 import Journal from './components/Journal';
 import AddCompany from './components/AddCompany';
+import AddTechnology from './components/AddTechnology';
 
 class Routes extends Component {
 
@@ -20,13 +21,18 @@ class Routes extends Component {
           <Route path="/networking" component={Networking} />
           <Route path="/job" component={Job} />
           <Route path="/projects" component={Projects} />
-          <Route path="/technologies" component={Technologies} />
           <Route path="/companies" render={props =>
             <Fragment>
               <Companies />
               <AddCompany />
             </Fragment>
             } />
+          <Route path="/technologies" render={props =>
+          <Fragment>
+            <Technologies />
+            <AddTechnology />
+          </Fragment>
+          } />
           <Route path="/journal" component={Journal} />
         </Switch>
       </div>
