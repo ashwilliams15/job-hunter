@@ -22,6 +22,12 @@ a {
   flex-direction: column;
 }
 
+.technologies {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .nav {
   height: 75px;
   background-color: #b7b7a4;

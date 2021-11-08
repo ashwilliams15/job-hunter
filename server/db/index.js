@@ -1,6 +1,6 @@
 //this is the access point for all things database related!
 const db = require('./db');
-const Tasks = require("./models/Tasks");
+const Technologies = require("./models/Technologies");
 const Companies = require('./models/Companies');
 
 
@@ -9,7 +9,7 @@ const Companies = require('./models/Companies');
 module.exports = {
   db,
   models: {
-    Tasks,
+    Technologies,
     Companies
   },
 }

@@ -27,8 +27,6 @@ class Routes extends Component {
               <AddCompany />
             </Fragment>
             } />
-          {/* <Route path="/companies" component={Companies} />
-          <Route path ="/companies" component={AddCompany} /> */}
           <Route path="/journal" component={Journal} />
         </Switch>
       </div>

@@ -1,11 +1,11 @@
 const router = require('express').Router()
-const { models: { Tasks }} = require('../db')
+const { models: { Technologies }} = require('../db')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const tasks = await Tasks.findAll();
-    res.json(tasks)
+    const technologies = await Technologies.findAll();
+    res.json(technologies)
   } catch (err) {
     next(err)
   }

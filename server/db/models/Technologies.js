@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Tasks = db.define('tasks', {
+const Technologies = db.define('technologies', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
   }
 })
 
-module.exports = Tasks
+module.exports = Technologies

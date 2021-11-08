@@ -1,6 +1,6 @@
 'use strict'
 
-const {db, models: { Tasks, Companies } } = require('../server/db')
+const {db, models: { Technologies, Companies } } = require('../server/db')
 
 /**
  * seed - this function clears the database, updates tables to
@@ -10,8 +10,8 @@ async function seed() {
   await db.sync({ force: true }) // clears db and matches models to tables
   console.log('db synced!')
 
-  const tasks = await Promise.all([
-    Tasks.create({ name: 'makeApp' })
+  const technologies = await Promise.all([
+    Technologies.create({ name: 'Typescript' })
   ])
 
   const companies = await Promise.all([
@@ -19,13 +19,12 @@ async function seed() {
     Companies.create({ name: 'Slack', notes: 'platform for team management and communication '})
   ])
 
-  console.log(`seeded ${tasks.length} tasks`)
   console.log(`seeded successfully`)
-  return {
-    tasks: {
-      firstTask: tasks[0]
-    }
-  }
+  // return {
+  //   tasks: {
+  //     firstTask: tasks[0]
+  //   }
+  // }
 }
 
 /*
