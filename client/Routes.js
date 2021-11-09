@@ -10,6 +10,7 @@ import Companies from './components/Companies';
 import Journal from './components/Journal';
 import AddCompany from './components/AddCompany';
 import AddTechnology from './components/AddTechnology';
+import LearnedTechnologies from './components/LearnedTechnologies';
 
 class Routes extends Component {
 
@@ -31,6 +32,7 @@ class Routes extends Component {
           <Fragment>
             <Technologies />
             <AddTechnology />
+            <LearnedTechnologies />
           </Fragment>
           } />
           <Route path="/journal" component={Journal} />

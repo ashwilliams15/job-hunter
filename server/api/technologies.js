@@ -19,3 +19,13 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.put('/:id', async (req, res, next) => {
+  try {
+    const technology = await Technologies.findByPk(req.params.id)
+    await technology.update({checked: !req.body.checked})
+    res.send(technology)
+  } catch (err) {
+    next(err)
+  }
+})

@@ -3,6 +3,7 @@ import axios from "axios";
 // ACTION TYPES
 const SET_TECHNOLOGIES = "SET_TECHNOLOGIES";
 const CREATE_TECHNOLOGY = "CREATE_TECHNOLOGY";
+const UPDATE_TECHNOLOGY = "UPDATE_TECHNOLOGY";
 
 // ACTION CREATORS
 const setTechnologies = (technologies) => {
@@ -10,11 +11,18 @@ const setTechnologies = (technologies) => {
     type: SET_TECHNOLOGIES,
     technologies
   }
-};
+}
 
 const createTechnology = (technology) => {
   return {
     type: CREATE_TECHNOLOGY,
+    technology
+  }
+}
+
+const updateTechnology = (technology) => {
+  return {
+    type: UPDATE_TECHNOLOGY,
     technology
   }
 }
@@ -44,6 +52,17 @@ export const addTechnology = (name) => {
   }
 }
 
+export const putTechnology = (technology) => {
+  return async (dispatch) => {
+    try {
+      const { data: created } = await axios.put(`/api/technologies/${technology.id}`, technology)
+      dispatch(updateTechnology(created))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
 // REDUCER
 export default function technologiesReducer (state = [], action) {
   switch (action.type) {
@@ -51,6 +70,8 @@ export default function technologiesReducer (state = [], action) {
       return action.technologies
       case CREATE_TECHNOLOGY:
         return [...state, action.technology]
+      case UPDATE_TECHNOLOGY:
+        return state.map((technology) => technology.id === action.technology.id ? action.technology : technology)
     default:
       return state
   }

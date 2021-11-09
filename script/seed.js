@@ -11,7 +11,7 @@ async function seed() {
   console.log('db synced!')
 
   const technologies = await Promise.all([
-    Technologies.create({ name: 'Typescript' })
+    Technologies.create({ name: 'Typescript', checked: false })
   ])
 
   const companies = await Promise.all([
