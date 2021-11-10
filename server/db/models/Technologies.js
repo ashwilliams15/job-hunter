@@ -1,15 +1,15 @@
-const Sequelize = require('sequelize')
-const db = require('../db')
+const Sequelize = require("sequelize");
+const db = require("../db");
 
-const Technologies = db.define('technologies', {
+const Technologies = db.define("technologies", {
   name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
   },
   checked: {
     type: Sequelize.BOOLEAN,
-    defaultValue: false
-  }
-})
+    defaultValue: false,
+  },
+});
 
-module.exports = Technologies
+module.exports = Technologies;
