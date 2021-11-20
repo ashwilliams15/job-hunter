@@ -7,7 +7,6 @@ const AddCompany = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [notes, setNotes] = useState("");
-
   const handleSubmit = (evt) => {
     evt.preventDefault()
     dispatch(addCompany(name, notes))
