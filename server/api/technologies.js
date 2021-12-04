@@ -31,3 +31,13 @@ router.put("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const technology = await Technologies.findByPk(req.params.id);
+    technology.destroy();
+    res.json(technology);
+  } catch (err) {
+    next(err);
+  }
+});
