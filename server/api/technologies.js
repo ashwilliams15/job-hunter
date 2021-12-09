@@ -35,7 +35,7 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   try {
     const technology = await Technologies.findByPk(req.params.id);
-    technology.destroy();
+    await technology.destroy();
     res.json(technology);
   } catch (err) {
     next(err);

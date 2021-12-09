@@ -3,7 +3,7 @@ const request = require("supertest");
 const seed = require("../../script/seed");
 const app = require("../app");
 
-describe.only("Contacts Routes", () => {
+describe("Contacts Routes", () => {
   beforeEach(async () => {
     await seed();
   });
