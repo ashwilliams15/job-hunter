@@ -22,12 +22,14 @@ const LearnedTechnologies = () => {
   return (
     <div className="learnedTechnologies">
       <h1>Technologies I Have Learned</h1>
-      {learned.map((tech) => (
-        <div key={tech.id}>
-          <li>{tech.name}</li>
-          <button onClick={() => handleDelete(tech)}>Delete</button>
-        </div>
-      ))}
+      <div>
+        {learned.map((tech) => (
+          <div key={tech.id}>
+            <li style={{ display: "inline" }}>{tech.name}</li>
+            <button onClick={() => handleDelete(tech)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

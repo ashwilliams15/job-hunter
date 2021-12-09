@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTechnologies, putTechnology } from "../store/technologies";
+import {
+  fetchTechnologies,
+  putTechnology,
+  destroyTechnology,
+} from "../store/technologies";
 
 const Technologies = () => {
   const dispatch = useDispatch();
@@ -20,6 +24,10 @@ const Technologies = () => {
     dispatch(putTechnology(technology));
     window.alert("Don't forget to add to your resume!");
   };
+
+  const handleDelete = (tech) => {
+    dispatch(destroyTechnology(tech));
+  };
   return (
     <div>
       <div className="technologies">
@@ -33,6 +41,7 @@ const Technologies = () => {
                 onChange={() => handleCheck(technology)}
               />
               <label htmlFor={technology.id}>{technology.name}</label>
+              <button onClick={() => handleDelete(technology)}>Delete</button>
             </div>
           ))}
         </div>
