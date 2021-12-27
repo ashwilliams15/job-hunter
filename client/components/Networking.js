@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../store/contacts";
+import ContactsList from "./ContactsList";
 
 const Networking = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const Networking = () => {
   return (
     <div>
       <h1>People I Have Connected With</h1>
+      <ContactsList />
       <h3>Add New Connection</h3>
       <form onSubmit={handleSubmit}>
         <input
